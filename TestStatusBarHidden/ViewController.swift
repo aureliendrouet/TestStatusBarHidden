@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var statusBarHiddenFlag: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +22,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func btAction(_ sender: Any) {
+        self.statusBarHiddenFlag = !self.statusBarHiddenFlag
+        super.setNeedsStatusBarAppearanceUpdate()
+    }
+
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.slide
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return self.statusBarHiddenFlag
+    }
 
 }
 
