@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     @IBAction func btAction(_ sender: Any) {
         self.statusBarHiddenFlag = !self.statusBarHiddenFlag
-        super.setNeedsStatusBarAppearanceUpdate()
+        self.setNeedsStatusBarAppearanceUpdate()
     }
 
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
